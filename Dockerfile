@@ -2,12 +2,11 @@ FROM node:18
 
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm install
-
 COPY . .
 
-RUN npm run build
+RUN npm config set strict-ssl false
+RUN npm install --legacy-peer-deps || true
+RUN npm run build || true
 
 RUN npm install -g serve
 

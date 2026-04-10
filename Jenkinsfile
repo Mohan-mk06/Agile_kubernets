@@ -33,7 +33,11 @@ pipeline {
 
         stage('Deploy to Kubernetes') {
             steps {
+<<<<<<< HEAD
                 bat kubectl apply -f deployement.yaml
+=======
+                bat 'kubectl apply -f Agille/deployement.yaml'
+>>>>>>> a12c192 (final fix dockerfile)
             }
         }
     }
